@@ -7,6 +7,7 @@ public class Table {
 
     private List<Player> players;
     private List<Card> ftr;
+    private List<Card> burnPile;
     private int pot;
     //private List<Card> flop turn river 
 
@@ -14,6 +15,7 @@ public class Table {
         Player dealer = new Player("Dealer");
         this.players = new ArrayList<>();
         this.ftr = new ArrayList<>();
+        this.burnPile = new ArrayList<>();
         this.pot = 0;
         addPlayer(dealer);
     }
@@ -53,6 +55,10 @@ public class Table {
         for(Player player : this.players){
             player.placeBet(10);
         }
+    }
+
+    public void addToBurnPile(Card card){
+        this.burnPile.add(card);
     }
 
 

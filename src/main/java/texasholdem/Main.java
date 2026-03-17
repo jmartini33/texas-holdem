@@ -8,13 +8,13 @@ import texasholdem.model.Table;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Texas Hold'em");
+        System.out.println("Welcome to Texas Hold'em");
+        //Create table
         Table table = new Table();
-        
+
         //Take in players from terminal
         Scanner scanner = new Scanner(System.in);
         String playerName = "";
-
         while (!playerName.equals("x")) {
             System.out.print("Enter player name: ");
             playerName = scanner.nextLine();
@@ -26,11 +26,10 @@ public class Main {
         //Close scanner
         scanner.close();
 
+        //GAME LOOP WILL EXIST HERE
         //Create deck and deal
         Deck deck = new Deck();
         deck.deal(table.getPlayers());
-        table.getPlayers().get(0).showCards();
-        table.getPlayers().get(1).showCards();
 
         //NEED TO BET 
 

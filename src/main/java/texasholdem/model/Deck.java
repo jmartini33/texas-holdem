@@ -25,6 +25,17 @@ public class Deck {
         this.cards = cards;
     }
 
+    //REPEATABLE METHODS
+    public Card getTopCard(){
+        return this.cards.get(0);
+    }
+
+    public void popTopCard(){
+        this.cards.remove(0);
+    }
+
+    
+
     //Create card for each suit / rank defined 
     //Add each card to the deck
     public void generateDeck() {
@@ -47,9 +58,9 @@ public class Deck {
         for (int i = 0 ; i <= 1; i++){
             for (Player player : players) {
                 //Deal card to player
-                player.dealCard(this.cards.get(0));
+                player.dealCard(this.getTopCard());
                 //Remove card from deck
-                this.cards.remove(0);
+                this.popTopCard();
             }
         }
     }
@@ -57,17 +68,25 @@ public class Deck {
     //Deal the flop
     public void flop(Table table){
         List<Card> flop = new ArrayList<>();
+        table.addToBurnPile(this.getTopCard());
+        this.popTopCard();
         for (int i = 0; i <= 2 ; i++){
-            flop.add(this.cards.get(0));
-            this.cards.remove(0);
+            flop.add(this.getTopCard());
+            this.popTopCard();
         }
         table.addFlop(flop);
     }
 
     //Deal the turn / River
     public void turnRiver(Table table){
-        table.addTurnRiver(this.cards.get(0));
-        this.cards.remove(0);
+        table.addTurnRiver(this.getTopCard());
+        this.popTopCard();
+    }
+
+    public void burnCard(Table table){
+        table.addToBurnPile(this.getTopCard());
+        this.popTopCard();
+
     }
 
     //Prints deck to terminal
