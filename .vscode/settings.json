@@ -1,3 +1,9 @@
 {
-  "java.project.sourcePaths": ["src/main/java"]
+  "java.project.sourcePaths": ["src/main/java"],
+  "editor.quickSuggestions": {
+    "other": "off",
+    "comments": "off",
+    "strings": "off"
+  },
+  "github.copilot.editor.enableAutoCompletions": false
 }

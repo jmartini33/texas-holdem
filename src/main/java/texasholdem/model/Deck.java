@@ -3,14 +3,14 @@ package texasholdem.model;
 import java.util.ArrayList;
 import java.util.List;
 
-class Deck {
+public class Deck {
 
     private List<Card> cards;
     
     //CONSTRUCTOR
     public Deck(){
         this.cards = new ArrayList<>();
-        //GENERATEDECK()
+        generateDeck();
     }
 
     //GETTERS
@@ -24,7 +24,14 @@ class Deck {
     }
 
 
-    //public List<Card> generateDeck() {}
-       
+    public void generateDeck() {
+        for(Suit suit : Suit.values()){
+            for(Rank rank : Rank.values()){
+                Card card = new Card(rank, suit);
+                this.cards.add(card);
+            }
+
+        }          
+    }
 
 }

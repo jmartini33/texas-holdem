@@ -3,31 +3,31 @@ package texasholdem.model;
 public class Card {
 
     //Instance Variables - private
-    private String suit;
-    private String rank;
+    private Suit suit;
+    private Rank rank;
 
     //Constructor
-    public Card(String suit, String rank){   
+    public Card(Rank rank, Suit suit){   
         this.suit = suit;
         this.rank = rank;
 
     }
 
     //GETTERS
-    public String getSuit(){
+    public Suit getSuit(){
         return this.suit;
     }
 
-    public String getRank(){
+    public Rank getRank(){
         return this.rank;
     }
 
     //SETTERS
-    public void setSuit(String suit){
+    public void setSuit(Suit suit){
         this.suit = suit;
     }
 
-    public void setRank (String rank){
+    public void setRank (Rank rank){
         this.rank = rank;
     }
 
