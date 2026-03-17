@@ -23,4 +23,8 @@ class Deck {
         this.cards = cards;
     }
 
+
+    //public List<Card> generateDeck() {}
+       
+
 }
