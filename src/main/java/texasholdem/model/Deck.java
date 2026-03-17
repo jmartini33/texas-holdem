@@ -1,6 +1,7 @@
 package texasholdem.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck {
@@ -11,11 +12,12 @@ public class Deck {
     public Deck(){
         this.cards = new ArrayList<>();
         generateDeck();
+        shuffle();
     }
 
     //GETTERS
     public List<Card> getCards() {
-        return cards;
+        return this.cards;
     }
 
     //SETTERS
@@ -33,5 +35,28 @@ public class Deck {
 
         }          
     }
+
+    public void shuffle(){
+        Collections.shuffle(cards);
+    }
+
+    public void deal() {
+
+
+        
+
+    }
+
+
+
+
+
+
+    public void printDeck() {
+        for(Card card : this.getCards()) {
+            System.out.println(card.toString());
+        }
+    }
+
 
 }
